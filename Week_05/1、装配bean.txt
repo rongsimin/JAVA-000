@@ -1,0 +1,51 @@
+1、Xml配置
+<bean id="student" class="com.hello.Student">
+</bean>
+
+2、类上加@Component
+--------------@Component start---------------------
+
+@Component
+public class Teacher {
+
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+--------------@Component end-----------------------
+
+3、配置类中使用@Bean
+--------------@Bean start---------------------
+@Configuration
+public class BeanConfiguration{
+
+    @Bean("dog")
+	Animal getDog() {
+        return new Dog();
+    }
+
+}
+--------------@Bean end-----------------------
+
+4、继承FactoryBean
+--------------继承FactoryBean start---------------------
+@Component
+public class MyCat implements FactoryBean<Animal> {
+    @Override
+    public Animal getObject() throws Exception {
+        return new Cat();
+    }
+
+    @Override
+    public Class<?> getObjectType() {
+        return Animal.class;
+    }
+}
+--------------继承FactoryBean end-----------------------
