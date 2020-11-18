@@ -1,3 +1,6 @@
 1）使用JDBC 原生接口，实现数据库的增删改查操作。
+2）使用事务，PrepareStatement 方式，批处理方式，改进上述操作。
 附件 --->User.java  JDBCdemo.java
+
+
 
